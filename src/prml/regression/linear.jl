@@ -1,15 +1,19 @@
+# Definition and constructors
 mutable struct LinearRegression
     w::Vector{Float64}
 end
 LinearRegression() = LinearRegression([0])
 
-function fit!(model::LinearRegression, x::Array{Float64}, t::Vector{Float64})
+
+# Fit regressor
+function fit!(model::LinearRegression, x::AbstractArray, t::AbstractVector)
     phi = addphizero(x)
     model.w = pseudoinv(phi)*t
 end
 
 
-function predict(model::LinearRegression, x::Array{Float64})
+# Predict for array of data points
+function predict(model::LinearRegression, x::AbstractArray)
     phi = addphizero(x)
     return phi*model.w
 end

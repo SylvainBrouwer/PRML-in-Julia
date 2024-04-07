@@ -1,5 +1,3 @@
-using LinearAlgebra
-
 # Calculate the approximate Moore-Penrose inverse of a matrix
 function pseudoinv(A::Array{T}) where {T<:Real}
     A = Float64.(A)
