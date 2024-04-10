@@ -11,7 +11,7 @@ mutable struct Bernoulli{T<:Real}
 end
 
 
-Bernoulli(mu::T) where {T<:Real} = Bernoulli{T}(mu);
+Bernoulli(mu::T) where {T<:Real} = Bernoulli{T}(mu)
 
 
 # Sampling

@@ -4,8 +4,12 @@ using LinearAlgebra
 
 
 include("pseudoinv.jl")
+include("multinomial_coeff.jl")
 
-export pseudoinv
+export
+    # Functions
+    pseudoinv,
+    multinomial
 
 
 
