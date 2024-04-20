@@ -2,6 +2,7 @@ module distributions
 
 # Inclusion for import TODO: Find out how this should be done neatly.
 include("../../maths/sylvainsmaths.jl")
+import Distributions         #We only cover distributions Bishop covers, we may thus need this at some points.
 using SpecialFunctions
 using .SylvainsMaths
 
@@ -12,6 +13,7 @@ include("binomial.jl")
 include("beta.jl")
 include("categorical.jl")
 include("multinomial.jl")
+include("dirichlet.jl")
 
 
 export
@@ -21,6 +23,7 @@ export
     Beta,
     Categorical,
     Multinomial,
+    Dirichlet,
 
     #Functions
     pdf,
