@@ -12,7 +12,7 @@ end
 
 function Beta(a::Real, b::Real)
     args = promote(a, b)
-    Beta{typeof(args[1])}(args...)
+    return Beta{typeof(args[1])}(args...)
 end
 
 

@@ -4,6 +4,7 @@ module distributions
 include("../../maths/sylvainsmaths.jl")
 import Distributions         #We only cover distributions Bishop covers, we may thus need this at some points.
 using SpecialFunctions
+using LinearAlgebra
 using .SylvainsMaths
 
 
@@ -14,6 +15,8 @@ include("beta.jl")
 include("categorical.jl")
 include("multinomial.jl")
 include("dirichlet.jl")
+include("gaussian.jl")
+include("multivariate_gaussian.jl")
 
 
 export
@@ -24,6 +27,8 @@ export
     Categorical,
     Multinomial,
     Dirichlet,
+    Gaussian,
+    MultivariateGaussian,
 
     #Functions
     pdf,
