@@ -52,3 +52,13 @@ expectation(dist::Gaussian) = dist.mu
 variance(dist::Gaussian) = dist.std^2
 
 
+# Fitting
+function mle(::Type{T}, x::AbstractVector) where {T<:Gaussian}
+    N = length(x)
+    μ = sum(x) / N
+    std = sqrt(sum(map(z -> (z-μ)^2, x)) / (N-1))
+    return Gaussian(μ, std)
+end
+
+
+#TODO: conditionals, marginals

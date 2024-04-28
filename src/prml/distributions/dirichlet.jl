@@ -13,7 +13,7 @@ Dirichlet(a::Vector{T}) where {T<:Real} = Dirichlet{T}(a)
 
 
 # Sampling
-# We do not have a Gamma dist of our own, use the one from Distributions.jl
+# TODO: use own gamma
 function sample(dist::Dirichlet)
     gammas = []
     for α in dist.a

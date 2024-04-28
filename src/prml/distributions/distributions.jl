@@ -8,6 +8,9 @@ using LinearAlgebra
 using .SylvainsMaths
 
 
+#TODO: Normal-Gamma, Wishart, Normal-Wishart, Students-t, von Mises, Mixture of Gaussians
+
+
 # Inclusion for export
 include("bernoulli.jl")
 include("binomial.jl")
@@ -17,6 +20,7 @@ include("multinomial.jl")
 include("dirichlet.jl")
 include("gaussian.jl")
 include("multivariate_gaussian.jl")
+include("gamma.jl")
 
 
 export
@@ -29,6 +33,7 @@ export
     Dirichlet,
     Gaussian,
     MultivariateGaussian,
+    Gamma,
 
     #Functions
     pdf,

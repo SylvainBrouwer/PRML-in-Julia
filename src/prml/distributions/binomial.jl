@@ -53,7 +53,7 @@ variance(dist::Binomial) = dist.N * dist.mu * (1-dist.mu)
 
 
 # Fitting
-function mle(::Type{T}, x::AbstractVector{Q}) where {T<:Binomial} where {Q<:Real}
+function mle(::Type{T}, x::AbstractVector) where {T<:Binomial}
     N = length(x)
     ones = count((i -> i==1), x)
     zeros = count((i -> i==0), x)

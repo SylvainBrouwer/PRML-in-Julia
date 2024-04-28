@@ -43,3 +43,12 @@ end
 expectation(dist::MultivariateGaussian) = dist.mu
 variance(dist::MultivariateGaussian) = dist.Σ
 _dimensionality(dist::MultivariateGaussian) = length(dist.mu)
+
+
+# Fitting
+function mle(::Type{T}, x::AbstractVector) where {T<:MultivariateGaussian}
+    N = length(x)
+    μ = sum(x) ./ N
+    Σ = sum(map(z -> (z-μ)*transpose(z-μ), x)) ./ (N -1)
+    return MultivariateGaussian(μ, Σ)
+end
