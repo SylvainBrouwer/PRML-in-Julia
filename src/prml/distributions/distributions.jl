@@ -24,7 +24,7 @@ include("gamma.jl")
 
 
 export
-    #Structs
+    # Structs
     Bernoulli,
     Binomial,
     Beta,
@@ -35,7 +35,7 @@ export
     MultivariateGaussian,
     Gamma,
 
-    #Functions
+    # Functions
     pdf,
     cdf,
     mle,

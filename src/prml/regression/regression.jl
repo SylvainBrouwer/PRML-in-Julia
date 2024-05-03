@@ -1,14 +1,27 @@
-addphizero(x::Array{Float64}) = hcat(ones(size(x)[1]), x)
-
-
-# Inclusion for import TODO: Find out how this should be done neatly.
+module regression
 include("../../maths/sylvainsmaths.jl")
+using LinearAlgebra
 using .SylvainsMaths
 
 
 # Inclusion for export
-include("linear.jl")
-include("ridge.jl")
+include("regression_base.jl")
 
 
-# TODO: Make a module 
+export
+# Structs
+LinearRegression,
+RidgeRegression,
+PolynomialRegression,
+
+# Functions
+fit!,
+predict
+
+
+
+# FIXME: I'm not very happy with the unregularized / ridge split as implemented right now -> _design_matrix is duplicated
+# Maybe go the sklearn route -> "feature" transforms + a single regression object for linear / ridge
+
+
+end
